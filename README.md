@@ -26,8 +26,7 @@ PolyPanzer is licensed under the [MIT License](LICENSE), allowing for both perso
 
 ## Credits
 
-- [Panzer III](https://free3d.com/3d-model/wwii-tank-germany-panzer-iii-v1--870820.html)
-- [T-90](https://free3d.com/3d-model/t-90-99734.html)
+- [Comeback : Cartoon Tank Free](https://assetstore.unity.com/packages/3d/vehicles/land/cartoon-tank-free-165189)
 - []()
 - []()
 - []()
