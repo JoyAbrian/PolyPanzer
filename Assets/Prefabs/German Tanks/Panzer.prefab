@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1995934676649261289}
-  - component: {fileID: 8557825177898316004}
+  - component: {fileID: 298985496310403803}
   m_Layer: 0
   m_Name: Panzer
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   - {fileID: 2495088000233268589}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8557825177898316004
+--- !u!114 &298985496310403803
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,6 +72,7 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.FloatMultiply
         - HutongGames.PlayMaker.Actions.Translate
         - HutongGames.PlayMaker.Actions.Rotate
+        - HutongGames.PlayMaker.Actions.SmoothLookAt
         customNames:
         - 
         - 
@@ -79,12 +80,19 @@ MonoBehaviour:
         - 
         - 
         - 
-        actionEnabled: 010101010101
-        actionIsOpen: 000000000000
-        actionStartIndex: 0000000005000000080000000d000000100000001a000000
-        actionHashCodes: 11839a009845b30511839a009845b305b0327400b0327400
+        - 
+        actionEnabled: 01010101010101
+        actionIsOpen: 00000000000001
+        actionStartIndex: 0000000005000000080000000d000000100000001a00000024000000
+        actionHashCodes: 11839a009845b30511839a009845b305b0327400b03274004e661301
         unityObjectParams: []
-        fsmGameObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: Target Look At
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: {fileID: 0}
         fsmOwnerDefaultParams:
         - ownerOption: 0
           gameObject:
@@ -102,6 +110,14 @@ MonoBehaviour:
             showInInspector: 0
             networkSync: 0
             value: {fileID: 0}
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Tank Cannon
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 4651642061562606587}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
@@ -173,7 +189,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 1
           networkSync: 0
-          value: 75
+          value: 50
         - useVariable: 1
           name: 
           tooltip: 
@@ -210,8 +226,32 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 5
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 1
         fsmIntParams: []
         fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         - useVariable: 0
           name: 
           tooltip: 
@@ -238,16 +278,29 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: {x: 0, y: 0, z: 0}
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {x: 0, y: 0, z: 0}
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {x: 0, y: 0, z: 0}
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams: []
+        stringParams:
+        - 
         byteData: 0101010101000000010100000100000001010000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 120000000f000000110000000f000000010000000f0000000f00000001000000120000000f000000110000000f000000010000000f0000000f00000001000000140000001c0000000f0000000f0000000f0000000700000001000000010000000100000001000000140000001c0000000f0000000f0000000f0000000700000001000000010000000100000001000000
+        paramDataType: 120000000f000000110000000f000000010000000f0000000f00000001000000120000000f000000110000000f000000010000000f0000000f00000001000000140000001c0000000f0000000f0000000f0000000700000001000000010000000100000001000000140000001c0000000f0000000f0000000f000000070000000100000001000000010000000100000014000000130000001c0000001c000000110000000f000000110000000f00000017000000
         paramName:
         - axisName
         - multiplier
@@ -285,8 +338,17 @@ MonoBehaviour:
         - everyFrame
         - lateUpdate
         - fixedUpdate
-        paramDataPos: 00000000000000000000000001000000000000000200000003000000010000000100000004000000010000000500000002000000060000000700000003000000000000000000000008000000090000000a0000000400000008000000090000000a0000000b00000001000000010000000b0000000c0000000d0000000c00000010000000110000001200000013000000
-        paramByteDataSize: 000000000000000000000000000000000100000000000000000000000100000000000000000000000000000000000000010000000000000000000000010000000000000000000000000000000000000000000000040000000100000001000000010000000100000000000000000000000000000000000000000000000400000001000000010000000100000001000000
+        - gameObject
+        - targetObject
+        - targetPosition
+        - upVector
+        - keepVertical
+        - speed
+        - debug
+        - finishTolerance
+        - finishEvent
+        paramDataPos: 00000000000000000000000001000000000000000200000003000000010000000100000004000000010000000500000002000000060000000700000003000000000000000000000008000000090000000a0000000400000008000000090000000a0000000b00000001000000010000000b0000000c0000000d0000000c0000001000000011000000120000001300000002000000000000000200000003000000020000000e000000030000000f00000000000000
+        paramByteDataSize: 000000000000000000000000000000000100000000000000000000000100000000000000000000000000000000000000010000000000000000000000010000000000000000000000000000000000000000000000040000000100000001000000010000000100000000000000000000000000000000000000000000000400000001000000010000000100000001000000000000000000000000000000000000000000000000000000000000000000000000000000
     events: []
     globalTransitions: []
     variables:
@@ -335,7 +397,19 @@ MonoBehaviour:
       colorVariables: []
       rectVariables: []
       quaternionVariables: []
-      gameObjectVariables: []
+      gameObjectVariables:
+      - useVariable: 1
+        name: Tank Cannon
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 4651642061562606587}
+      - useVariable: 1
+        name: Target Look At
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -343,7 +417,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -474,7 +548,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4651642061562606587}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
