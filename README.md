@@ -24,14 +24,6 @@ We welcome contributions from the community! If you're interested in helping imp
 
 PolyPanzer is licensed under the [MIT License](LICENSE), allowing for both personal and commercial use.
 
-## Credits
-
-- [Comeback : Cartoon Tank Free](https://assetstore.unity.com/packages/3d/vehicles/land/cartoon-tank-free-165189)
-- []()
-- []()
-- []()
-- 
-
 ## Contact
 
 If you have any questions, suggestions, or feedback, feel free to contact us at contact@polypanzer.com.
