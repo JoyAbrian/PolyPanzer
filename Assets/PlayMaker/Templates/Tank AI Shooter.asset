@@ -229,16 +229,18 @@ MonoBehaviour:
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.CreateObject
+        - HutongGames.PlayMaker.Actions.CreateObject
         - HutongGames.PlayMaker.Actions.SetFsmString
         - HutongGames.PlayMaker.Actions.RandomWait
         customNames:
         - 
         - 
         - 
-        actionEnabled: 010101
-        actionIsOpen: 000100
-        actionStartIndex: 00000000060000000b000000
-        actionHashCodes: 6053230152221a020d5f5c01
+        - 
+        actionEnabled: 01010101
+        actionIsOpen: 00010100
+        actionStartIndex: 00000000060000000c00000011000000
+        actionHashCodes: 605323016053230152221a020d5f5c01
         unityObjectParams: []
         fsmGameObjectParams:
         - useVariable: 1
@@ -261,6 +263,30 @@ MonoBehaviour:
           value: {fileID: 0}
         - useVariable: 1
           name: Bullet Clone
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: Shot FX
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: Bullet Spawn Point
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: 
           tooltip: 
           showInInspector: 0
           networkSync: 0
@@ -332,6 +358,18 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: {x: 0, y: 0, z: 0}
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {x: 0, y: 0, z: 0}
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {x: 0, y: 0, z: 0}
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
@@ -342,8 +380,14 @@ MonoBehaviour:
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 1300000013000000130000001c0000001c0000001300000014000000120000001200000012000000010000000f0000000f0000001700000001000000
+        paramDataType: 1300000013000000130000001c0000001c000000130000001300000013000000130000001c0000001c0000001300000014000000120000001200000012000000010000000f0000000f0000001700000001000000
         paramName:
+        - gameObject
+        - parent
+        - spawnPoint
+        - position
+        - rotation
+        - storeObject
         - gameObject
         - parent
         - spawnPoint
@@ -359,8 +403,8 @@ MonoBehaviour:
         - max
         - finishEvent
         - realTime
-        paramDataPos: 000000000100000002000000000000000100000003000000000000000000000001000000020000000000000000000000010000000000000001000000
-        paramByteDataSize: 000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000001000000
+        paramDataPos: 000000000100000002000000000000000100000003000000040000000500000006000000020000000300000007000000000000000000000001000000020000000000000000000000010000000000000001000000
+        paramByteDataSize: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000001000000
     events:
     - name: Aim Target
       isSystemEvent: 0
@@ -446,6 +490,12 @@ MonoBehaviour:
         showInInspector: 0
         networkSync: 0
         value: {fileID: 0}
+      - useVariable: 1
+        name: Shot FX
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -453,7 +503,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 000000000000000000000000000000000000000000000000
+      variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
