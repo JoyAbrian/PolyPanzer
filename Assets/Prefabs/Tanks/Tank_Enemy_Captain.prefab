@@ -164,6 +164,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &3805878988434626031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5695353093347115999}
+  m_Layer: 0
+  m_Name: BulletSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5695353093347115999
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3805878988434626031}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.005, y: 0, z: 0.922}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 706790385317981771}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3972030807954481353
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,7 +310,7 @@ Transform:
   m_GameObject: {fileID: 4467668534262808878}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.87093437, z: -0, w: 0.49139932}
-  m_LocalPosition: {x: 2.774379, y: 0.7839817, z: 15.436296}
+  m_LocalPosition: {x: 515.2, y: 0.704, z: 287.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -447,7 +478,7 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: 150
+        value: 200
       - useVariable: 1
         name: Hit Damage
         tooltip: 
@@ -462,7 +493,13 @@ MonoBehaviour:
       colorVariables: []
       rectVariables: []
       quaternionVariables: []
-      gameObjectVariables: []
+      gameObjectVariables:
+      - useVariable: 1
+        name: Explode FX
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 1056904543853562, guid: 4cf45cdce36e66e4a93614abb5ae7821, type: 3}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -470,7 +507,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000000000000000000000000000
+      variableCategoryIDs: 0000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -796,19 +833,25 @@ MonoBehaviour:
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: {fileID: 8362787410197010642, guid: 16f21b04676b9784180d9caba4d18311, type: 3}
+        value: {fileID: 7090710131271465290, guid: 80929c974a1302f4d865cf47f6070cef, type: 3}
       - useVariable: 1
         name: Bullet Spawn Point
         tooltip: 
         showInInspector: 1
         networkSync: 0
-        value: {fileID: 8124877103330747536}
+        value: {fileID: 3805878988434626031}
       - useVariable: 1
         name: Tank Turret
         tooltip: 
         showInInspector: 1
         networkSync: 0
         value: {fileID: 6861509014548343529}
+      - useVariable: 1
+        name: Shot FX
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 1130945418854432, guid: 07277f9efe2374047bf57bdba847e02b, type: 3}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -816,7 +859,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000000000000000000000000000
+      variableCategoryIDs: 0000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -959,7 +1002,7 @@ GameObject:
   - component: {fileID: 2663063014677891928}
   - component: {fileID: 4419521249800864446}
   m_Layer: 0
-  m_Name: TankFree_Canon
+  m_Name: TankFree_Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -978,7 +1021,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7908291589930484918}
+  - {fileID: 5695353093347115999}
   m_Father: {fileID: 5734164533310468213}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2663063014677891928
@@ -1198,34 +1241,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &8124877103330747536
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7908291589930484918}
-  m_Layer: 0
-  m_Name: Bullet Spawn Point
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7908291589930484918
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8124877103330747536}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.87093437, z: -0, w: 0.49139932}
-  m_LocalPosition: {x: 0.014, y: 0, z: 0.905}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 706790385317981771}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
