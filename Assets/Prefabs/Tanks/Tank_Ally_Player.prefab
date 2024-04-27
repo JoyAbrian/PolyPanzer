@@ -546,6 +546,7 @@ GameObject:
   - component: {fileID: 7426987280517411774}
   - component: {fileID: 7955926973763168376}
   - component: {fileID: 6034531400930322026}
+  - component: {fileID: 963585596766235160}
   m_Layer: 0
   m_Name: Tank_Ally_Player
   m_TagString: Player
@@ -1031,7 +1032,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -1060,14 +1061,14 @@ MonoBehaviour:
     handleJointBreak2D: 0
     handleOnGUI: 0
     handleFixedUpdate: 0
-    handleLateUpdate: 0
+    handleLateUpdate: 1
     handleApplicationEvents: 0
     handleUiEvents: 0
     handleLegacyNetworking: 0
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
 --- !u!114 &7426987280517411774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1439,7 +1440,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -1475,7 +1476,7 @@ MonoBehaviour:
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
 --- !u!65 &7955926973763168376
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1513,15 +1514,15 @@ MonoBehaviour:
     dataVersion: 2
     usedInTemplate: {fileID: 0}
     name: FSM
-    startState: State 1
+    startState: Init
     states:
-    - name: State 1
+    - name: Init
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 50
-        y: 100
+        x: 65
+        y: 104
         width: 100
         height: 16
       isBreakpoint: 0
@@ -1529,12 +1530,122 @@ MonoBehaviour:
       hideUnused: 0
       transitions: []
       actionData:
-        actionNames: []
-        customNames: []
-        actionEnabled: 
-        actionIsOpen: 
-        actionStartIndex: 
-        actionHashCodes: 
+        actionNames:
+        - HutongGames.PlayMaker.Actions.UiSliderSetMinMax
+        - HutongGames.PlayMaker.Actions.SetFloatValue
+        - HutongGames.PlayMaker.Actions.NextFrameEvent
+        customNames:
+        - 
+        - 
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 010100
+        actionStartIndex: 000000000500000008000000
+        actionHashCodes: bf8a92039845b30588611604
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Health Slider
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: Set Health
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: 100
+        - useVariable: 1
+          name: Current Health
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: Set Health
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: 100
+        fsmIntParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - Alive
+        byteData: 0000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 140000000f0000000f00000011000000010000000f0000000f0000000100000017000000
+        paramName:
+        - gameObject
+        - minValue
+        - maxValue
+        - resetOnExit
+        - everyFrame
+        - floatVariable
+        - floatValue
+        - everyFrame
+        - sendEvent
+        paramDataPos: 000000000000000001000000000000000000000002000000030000000100000000000000
+        paramByteDataSize: 000000000000000000000000000000000100000000000000000000000100000000000000
+    - name: Damaged
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 215
+        y: 113
+        width: 111
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.FloatSubtract
+        - HutongGames.PlayMaker.Actions.Wait
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0000
+        actionStartIndex: 0000000004000000
+        actionHashCodes: 2a6e8a0048c01101
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -1549,11 +1660,263 @@ MonoBehaviour:
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
-        fsmFloatParams: []
+        fsmFloatParams:
+        - useVariable: 1
+          name: Current Health
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: Hit Damage
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0.1
         fsmIntParams: []
         fsmBoolParams: []
         fsmVector2Params: []
         fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - Alive
+        byteData: 000000
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 0f0000000f00000001000000010000000f0000001700000001000000
+        paramName:
+        - floatVariable
+        - subtract
+        - everyFrame
+        - perSecond
+        - time
+        - finishEvent
+        - realTime
+        paramDataPos: 00000000010000000000000001000000020000000000000002000000
+        paramByteDataSize: 00000000000000000100000001000000000000000000000001000000
+    - name: Alive
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 355
+        y: 107
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.UiSliderSetValue
+        - HutongGames.PlayMaker.Actions.FloatCompare
+        customNames:
+        - 
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0100
+        actionStartIndex: 0000000004000000
+        actionHashCodes: 52cb52031bcdca04
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 1
+            name: Health Slider
+            tooltip: 
+            showInInspector: 1
+            networkSync: 0
+            value: {fileID: 0}
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 1
+          name: Current Health
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: Current Health
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmIntParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - Dead
+        - Dead
+        - 
+        byteData: 0100
+        arrayParamSizes: 
+        arrayParamTypes: []
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 140000000f00000011000000010000000f0000000f0000000f00000017000000170000001700000001000000
+        paramName:
+        - gameObject
+        - value
+        - resetOnExit
+        - everyFrame
+        - float1
+        - float2
+        - tolerance
+        - equal
+        - lessThan
+        - greaterThan
+        - everyFrame
+        paramDataPos: 0000000000000000000000000000000001000000020000000300000000000000010000000200000001000000
+        paramByteDataSize: 0000000000000000000000000100000000000000000000000000000000000000000000000000000001000000
+    - name: Dead
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 485
+        y: 109
+        width: 100
+        height: 16
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions: []
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.GetOwner
+        - HutongGames.PlayMaker.Actions.CreateObject
+        - HutongGames.PlayMaker.Actions.DestroySelf
+        customNames:
+        - 
+        - 
+        - 
+        actionEnabled: 010101
+        actionIsOpen: 000000
+        actionStartIndex: 000000000100000007000000
+        actionHashCodes: 5c00450560532301230cc800
+        unityObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 1
+          name: Owner
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: Explode FX
+          tooltip: 
+          showInInspector: 1
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: Owner
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 0}
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmIntParams: []
+        fsmBoolParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmVector2Params: []
+        fsmVector3Params:
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {x: 0, y: 0, z: 0}
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {x: 0, y: 0, z: 0}
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
@@ -1563,12 +1926,58 @@ MonoBehaviour:
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 
-        paramName: []
-        paramDataPos: 
-        paramByteDataSize: 
-    events: []
-    globalTransitions: []
+        paramDataType: 130000001300000013000000130000001c0000001c000000130000000f0000001100000011000000
+        paramName:
+        - storeGameObject
+        - gameObject
+        - parent
+        - spawnPoint
+        - position
+        - rotation
+        - storeObject
+        - delay
+        - realTime
+        - detachChildren
+        paramDataPos: 00000000010000000200000003000000000000000100000004000000000000000000000001000000
+        paramByteDataSize: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+    events:
+    - name: Take Damage
+      isSystemEvent: 0
+      isGlobal: 1
+    - name: Alive
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Dead
+      isSystemEvent: 0
+      isGlobal: 0
+    globalTransitions:
+    - fsmEvent:
+        name: Take Damage
+        isSystemEvent: 0
+        isGlobal: 1
+      toState: Damaged
+      linkStyle: 0
+      linkConstraint: 0
+      linkTarget: 0
+      colorIndex: 0
+    - fsmEvent:
+        name: Alive
+        isSystemEvent: 0
+        isGlobal: 0
+      toState: Alive
+      linkStyle: 0
+      linkConstraint: 0
+      linkTarget: 0
+      colorIndex: 0
+    - fsmEvent:
+        name: Dead
+        isSystemEvent: 0
+        isGlobal: 0
+      toState: Dead
+      linkStyle: 0
+      linkConstraint: 0
+      linkTarget: 0
+      colorIndex: 0
     variables:
       floatVariables:
       - useVariable: 1
@@ -1604,6 +2013,18 @@ MonoBehaviour:
         showInInspector: 1
         networkSync: 0
         value: {fileID: 1056904543853562, guid: 4cf45cdce36e66e4a93614abb5ae7821, type: 3}
+      - useVariable: 1
+        name: Owner
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: {fileID: 0}
+      - useVariable: 1
+        name: Health Slider
+        tooltip: 
+        showInInspector: 1
+        networkSync: 0
+        value: {fileID: 0}
       objectVariables: []
       materialVariables: []
       textureVariables: []
@@ -1611,7 +2032,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 0000000000000000000000000000000000000000
+      variableCategoryIDs: 000000000000000000000000000000000000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -1620,9 +2041,9 @@ MonoBehaviour:
     password: 
     locked: 0
     manualUpdate: 0
-    outVariableIndices: 0200000000000000
+    outVariableIndices: 0000000002000000
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -1659,3 +2080,17 @@ MonoBehaviour:
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 11400000, guid: e3441332bb7a4d44d9dd588067e860ec, type: 2}
   eventHandlerComponentsAdded: 1
+--- !u!114 &963585596766235160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8060115241355881117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1079068393, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetFSMs:
+  - {fileID: 6598764376359967519}
